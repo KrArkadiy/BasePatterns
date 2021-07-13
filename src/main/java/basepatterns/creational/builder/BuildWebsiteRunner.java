@@ -1,0 +1,17 @@
+package main.java.basepatterns.creational.builder;
+
+public class BuildWebsiteRunner {
+    public static void main(String[] args) {
+        Director director = new Director();
+
+        director.setBuilder(new VisitCardWebsiteBuilder());
+        Website website = director.buildWebsite();
+
+        System.out.println(website);
+
+        director.setBuilder(new EneterpriseWebsiteBuilder());
+        Website website1 = director.buildWebsite();
+
+        System.out.println(website1);
+    }
+}
